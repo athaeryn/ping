@@ -1,18 +1,7 @@
-var renderers = require("./lib/renderers");
+var render = require("./lib/renderers");
+var input = require("./input.json");
 
-var input = {
-  frames: [
-    [
-      "0,.5,#ff7777",
-      "0,.5,#ff7777",
-      "0,.5,#ff7777"
-    ],
-    [
-      "50,0,#7777ff",
-      "25,0,#7777ff",
-      "10,0,#7777ff"
-    ]
-  ]
-};
+boxShadows = render.boxShadows(input.frames);
+keyframes = render.keyframes(input.name, boxShadows);
 
-console.log(renderers.boxShadows(input));
+console.log(keyframes);
