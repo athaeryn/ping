@@ -4,7 +4,7 @@
   "description": "Customize animated CSS dots.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "Mike Anderson",
   "license": "MIT",
@@ -13,5 +13,9 @@
     "color": "^0.7.1",
     "express": "^4.9.0",
     "mustache": "^0.8.2"
+  },
+  "devDependencies": {
+    "cssbeautify": "^0.3.1",
+    "mocha": "^1.21.4"
   }
 }
