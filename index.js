@@ -1,7 +1,11 @@
-var render = require("./lib/renderers");
-var input = require("./input.json");
+var browserify = require("browserify-middleware"),
+    express = require("express"),
+    app = express();
 
-boxShadows = render.boxShadows(input.frames);
-keyframes = render.keyframes(input.name, boxShadows);
 
-console.log(keyframes);
+app.get("/js/app.js", browserify("./browser.js"));
+app.get("/", function(req, res) {
+  res.sendFile(__dirname + "/index.html");
+});
+
+app.listen(3000)
