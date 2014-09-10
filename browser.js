@@ -8,18 +8,9 @@ firstFrame = new Ractive({
   el: "#frame1",
   template: "#control-group",
   data: {
-    ring1: {
-      r: 0,
-      a: 0.5
-    },
-    ring2: {
-      r: 0,
-      a: 0.5
-    },
-    ring3: {
-      r: 0,
-      a: 0.5
-    }
+    ring1: { r: 0, a: 0.5 },
+    ring2: { r: 0, a: 0.5 },
+    ring3: { r: 0, a: 0.5 }
   },
   computed: {
     asArray: function() {
@@ -34,18 +25,9 @@ lastFrame = new Ractive({
   el: "#frame2",
   template: "#control-group",
   data: {
-    ring1: {
-      r: 10,
-      a: 0.1
-    },
-    ring2: {
-      r: 25,
-      a: 0.1
-    },
-    ring3: {
-      r: 50,
-      a: 0.1
-    }
+    ring1: { r: 10, a: 0.1 },
+    ring2: { r: 25, a: 0.1 },
+    ring3: { r: 50, a: 0.1 }
   },
   computed: {
     asArray: function() {
@@ -58,7 +40,8 @@ lastFrame = new Ractive({
 
 
 updateAnimation = (function() {
-  var styleEl = document.getElementById("keyframes");
+  var styleEl = document.getElementById("keyframes"),
+      codeEl = document.getElementById("code");
 
   return function updateAnimation(input) {
     input = {
@@ -69,9 +52,11 @@ updateAnimation = (function() {
       ]
     }
     styleEl.innerHTML = "";
+    var css = render(input.name, input.frames);
+    codeEl.innerHTML = css;
     setTimeout(function() {
-      styleEl.innerHTML = render(input.name, input.frames);
-    }, 0);
+      styleEl.innerHTML = css;
+    }, 10);
   };
 }());
 
