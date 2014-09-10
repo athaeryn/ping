@@ -8,7 +8,7 @@
   }
 }
 
-@-mox-keyframes ping {
+@-moz-keyframes ping {
   0% {
     box-shadow: 0 0 0 0px rgba(255, 119, 119, 0.5),0 0 0 0px rgba(255, 119, 119, 0.5),0 0 0 0px rgba(255, 119, 119, 0.5);
   }

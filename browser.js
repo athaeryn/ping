@@ -1,5 +1,5 @@
-var render   = require("./lib/renderer"),
-    sample   = require("./sample.json"),
+var render = require("./lib/renderer"),
+    sample = require("./sample.json"),
     updateAnimation;
 
 
