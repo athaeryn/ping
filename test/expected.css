@@ -36,7 +36,7 @@
   height: 4px;
   border-radius: 2px;
   background-color: red;
-  -webkit-animation: ping 1s infinite ease-out;
-  -moz-animation: ping 1s infinite ease-out;
-  animation: ping 1s infinite ease-out;
+  -webkit-animation: ping 1s infinite alternate ease-out;
+  -moz-animation: ping 1s infinite alternate ease-out;
+  animation: ping 1s infinite alternate ease-out;
 }

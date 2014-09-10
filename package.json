@@ -12,7 +12,8 @@
     "browserify-middleware": "^3.0.1",
     "color": "^0.7.1",
     "express": "^4.9.0",
-    "mustache": "^0.8.2"
+    "mustache": "^0.8.2",
+    "ractive": "^0.5.6"
   },
   "devDependencies": {
     "cssbeautify": "^0.3.1",

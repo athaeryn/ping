@@ -4,9 +4,72 @@
     <meta charset="utf-8">
     <title>Ping</title>
     <style id="keyframes"></style>
+    <style>
+      html { background-color: white; }
+
+      .frame {
+        display: inline-block;
+        padding: 10px;
+        border-radius: 2px;
+        background-color: #ccc;
+        width: 200px;
+        margin-right: 5px;
+      }
+
+      .stage {
+        position: absolute;
+        bottom: 5px;
+        left: 8px;
+      }
+
+      .vert {
+        -webkit-appearance: none;
+        width: 100px;
+        height: 10px;
+        padding: 3px;
+        background: #777;
+        -webkit-transform: rotate(-90deg);
+        margin: 50px -44px;
+      }
+      .vert:focus { background: #444; }
+      .vert::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 10px;
+        height: 10px;
+        background: white;
+      }
+      .vert:focus { outline: 0; }
+
+      .vert-group {
+        float: left;
+        margin: 0px 13px;
+      }
+    </style>
   </head>
   <body>
     <div class="circle"></div>
+    <div class="stage">
+      <div id="frame1" style="float: left"></div>
+      <div id="frame2" style="float: left"></div>
+    </div>
+
+    <script id="control-group" type="text/ractive">
+      <div class="frame">
+        <div class="vert-group">
+          <input type="range" class="vert" min="0" max="100" value="{{ring1.r}}">
+          <input type="range" class="vert" min="0" max="1" step=".05" value="{{ring1.a}}">
+        </div>
+        <div class="vert-group">
+          <input type="range" class="vert" min="0" max="100" value="{{ring2.r}}">
+          <input type="range" class="vert" min="0" max="1" step=".05" value="{{ring2.a}}">
+        </div>
+        <div class="vert-group">
+          <input type="range" class="vert" min="0" max="100" value="{{ring3.r}}">
+          <input type="range" class="vert" min="0" max="1" step=".05" value="{{ring3.a}}">
+        </div>
+      </div>
+    </script>
+
     <script src="/js/app.js"></script>
   </body>
 </html>
