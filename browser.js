@@ -1,6 +1,7 @@
 var render = require("./lib/renderer"),
     sample = require("./sample.json"),
     Ractive = require("ractive"),
+    cssbeautify = require("cssbeautify"),
     firstFrame, lastFrame,
     updateAnimation;
 
@@ -53,7 +54,7 @@ updateAnimation = (function() {
     }
     styleEl.innerHTML = "";
     var css = render(input.name, input.frames);
-    codeEl.innerHTML = css;
+    codeEl.innerHTML = cssbeautify(css, {indent: "  "});
     setTimeout(function() {
       styleEl.innerHTML = css;
     }, 10);
